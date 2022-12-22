@@ -1,0 +1,120 @@
+/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=1*/;
+/*!40019 SET @@session.max_insert_delayed_threads=0*/;
+/*!50003 SET @OLD_COMPLETION_TYPE=@@COMPLETION_TYPE,COMPLETION_TYPE=0*/;
+DELIMITER /*!*/;
+# at 4
+#221201 23:09:01 server id 1  end_log_pos 256 CRC32 0xb9ee013a 	Start: binlog v 4, server v 10.5.15-MariaDB-0+deb11u1-log created 221201 23:09:01 at startup
+# Warning: this binlog is either in use or was not closed properly.
+ROLLBACK/*!*/;
+# at 256
+#221201 23:09:01 server id 1  end_log_pos 285 CRC32 0x383eb904 	Gtid list []
+# at 285
+#221201 23:09:01 server id 1  end_log_pos 330 CRC32 0x65d234a1 	Binlog checkpoint primary-bin.000001
+# at 330
+#221201 23:09:40 server id 1  end_log_pos 372 CRC32 0x8f8eaa75 	GTID 0-1-1 trans
+/*!100101 SET @@session.skip_parallel_replication=0*//*!*/;
+/*!100001 SET @@session.gtid_domain_id=0*//*!*/;
+/*!100001 SET @@session.server_id=1*//*!*/;
+/*!100001 SET @@session.gtid_seq_no=1*//*!*/;
+START TRANSACTION
+/*!*/;
+# at 372
+# at 441
+#221201 23:09:40 server id 1  end_log_pos 441 CRC32 0x5afb4c0d 	Annotate_rows:
+#Q> INSERT INTO test_table (name) VALUES ('name1')
+#221201 23:09:40 server id 1  end_log_pos 496 CRC32 0x5b47ec04 	Table_map: `kien`.`test_table` mapped to number 35
+# at 496
+#221201 23:09:40 server id 1  end_log_pos 537 CRC32 0xcd018dca 	Write_rows: table id 35 flags: STMT_END_F
+### INSERT INTO `kien`.`test_table`
+### SET
+###   @1='name1'
+# Number of rows: 1
+# at 537
+#221201 23:09:40 server id 1  end_log_pos 568 CRC32 0x98259104 	Xid = 213
+COMMIT/*!*/;
+# at 568
+#221201 23:09:51 server id 1  end_log_pos 610 CRC32 0xbd8334cd 	GTID 0-1-2 trans
+/*!100001 SET @@session.gtid_seq_no=2*//*!*/;
+START TRANSACTION
+/*!*/;
+# at 610
+# at 679
+#221201 23:09:51 server id 1  end_log_pos 679 CRC32 0x2690ae6d 	Annotate_rows:
+#Q> INSERT INTO test_table (name) VALUES ('name2')
+#221201 23:09:51 server id 1  end_log_pos 734 CRC32 0xfff3588e 	Table_map: `kien`.`test_table` mapped to number 35
+# at 734
+#221201 23:09:51 server id 1  end_log_pos 775 CRC32 0x54e7b569 	Write_rows: table id 35 flags: STMT_END_F
+### INSERT INTO `kien`.`test_table`
+### SET
+###   @1='name2'
+# Number of rows: 1
+# at 775
+#221201 23:09:51 server id 1  end_log_pos 806 CRC32 0x1703ddc7 	Xid = 214
+COMMIT/*!*/;
+# at 806
+#221201 23:09:55 server id 1  end_log_pos 848 CRC32 0xca786aed 	GTID 0-1-3 trans
+/*!100001 SET @@session.gtid_seq_no=3*//*!*/;
+START TRANSACTION
+/*!*/;
+# at 848
+# at 917
+#221201 23:09:55 server id 1  end_log_pos 917 CRC32 0x91ac6fac 	Annotate_rows:
+#Q> INSERT INTO test_table (name) VALUES ('name3')
+#221201 23:09:55 server id 1  end_log_pos 972 CRC32 0x667e0191 	Table_map: `kien`.`test_table` mapped to number 35
+# at 972
+#221201 23:09:55 server id 1  end_log_pos 1013 CRC32 0xc0ca6014 	Write_rows: table id 35 flags: STMT_END_F
+### INSERT INTO `kien`.`test_table`
+### SET
+###   @1='name3'
+# Number of rows: 1
+# at 1013
+#221201 23:09:55 server id 1  end_log_pos 1044 CRC32 0x11d54d82 	Xid = 215
+COMMIT/*!*/;
+# at 1044
+#221201 23:11:57 server id 1  end_log_pos 1086 CRC32 0x49be6a60 	GTID 0-1-4 trans
+/*!100001 SET @@session.gtid_seq_no=4*//*!*/;
+START TRANSACTION
+/*!*/;
+# at 1086
+# at 1162
+#221201 23:11:57 server id 1  end_log_pos 1162 CRC32 0xa83d3c6a 	Annotate_rows:
+#Q> UPDATE test_table
+#Q> SET name='name4'
+#Q> WHERE name='name
+#221201 23:11:57 server id 1  end_log_pos 1217 CRC32 0x3b2725d7 	Table_map: `kien`.`test_table` mapped to number 35
+# at 1217
+#221201 23:11:57 server id 1  end_log_pos 1267 CRC32 0x1e968cff 	Update_rows: table id 35 flags: STMT_END_F
+### UPDATE `kien`.`test_table`
+### WHERE
+###   @1='name2'
+### SET
+###   @1='name4'
+# Number of rows: 1
+# at 1267
+#221201 23:11:57 server id 1  end_log_pos 1298 CRC32 0x788f1b67 	Xid = 217
+COMMIT/*!*/;
+# at 1298
+#221201 23:13:03 server id 1  end_log_pos 1340 CRC32 0xf42793b0 	GTID 0-1-5 trans
+/*!100001 SET @@session.gtid_seq_no=5*//*!*/;
+START TRANSACTION
+/*!*/;
+# at 1340
+# at 1404
+#221201 23:13:03 server id 1  end_log_pos 1404 CRC32 0xd7ca214f 	Annotate_rows:
+#Q> DELETE FROM test_table
+#Q> WHERE name='name1
+#221201 23:13:03 server id 1  end_log_pos 1459 CRC32 0xdd95fd47 	Table_map: `kien`.`test_table` mapped to number 35
+# at 1459
+#221201 23:13:03 server id 1  end_log_pos 1500 CRC32 0x0503d964 	Delete_rows: table id 35 flags: STMT_END_F
+### DELETE FROM `kien`.`test_table`
+### WHERE
+###   @1='name1'
+# Number of rows: 1
+# at 1500
+#221201 23:13:03 server id 1  end_log_pos 1531 CRC32 0xe4e91e06 	Xid = 219
+COMMIT/*!*/;
+DELIMITER ;
+# End of log file
+ROLLBACK /* added by mysqlbinlog */;
+/*!50003 SET COMPLETION_TYPE=@OLD_COMPLETION_TYPE*/;
+/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=0*/;
